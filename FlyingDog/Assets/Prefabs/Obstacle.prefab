@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8635033819617718944}
   - component: {fileID: 6303455004687558982}
   - component: {fileID: 2697395147865603559}
-  - component: {fileID: 8611437014206200021}
+  - component: {fileID: 935012272673620311}
+  - component: {fileID: 2052174644}
+  - component: {fileID: 2453286488659880927}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4793108248955968423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.8052216, y: -2.656242, z: 0}
-  m_LocalScale: {x: 0.42301, y: 1.1759678, z: 0.42301}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -227,7 +229,7 @@ MonoBehaviour:
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
   m_GeometryCached: 0
---- !u!60 &8611437014206200021
+--- !u!60 &935012272673620311
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,3 +270,27 @@ PolygonCollider2D:
       - {x: -1.8056297, y: -2.0000002}
       - {x: -1.9490371, y: -2.0000002}
       - {x: -2, y: -2.0000002}
+--- !u!114 &2052174644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793108248955968423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9dc3aa0dfe6064faa7ba3418639f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2453286488659880927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793108248955968423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04f71275879bd44ba951b01b7dcd8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

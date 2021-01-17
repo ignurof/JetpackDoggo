@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        other.gameObject.SetActive(false);
+        Debug.Log("Testing Collision");
+        Destroy(collision.gameObject);
     }
 }
