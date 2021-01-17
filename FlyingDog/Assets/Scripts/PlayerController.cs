@@ -11,10 +11,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxis("Fire1");
         // Move the player to the right
         //transform.Translate(1 * speed * Time.deltaTime, 0, 0);
         // Move player up/down based on input
-        transform.Translate(0, 1 * updownSpeed * verticalInput * Time.deltaTime, 0);
+        if(verticalInput >= 0.1f)
+        {
+            transform.Translate(0, 1 * updownSpeed * Time.deltaTime, 0);
+        }
+        else
+        {
+            transform.Translate(0, -1 * updownSpeed * Time.deltaTime, 0);
+        }
     }
 }

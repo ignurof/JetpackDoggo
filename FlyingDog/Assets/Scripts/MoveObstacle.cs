@@ -6,16 +6,20 @@ public class MoveObstacle : MonoBehaviour
 {
     public string position;
 
+    private int destroyTime = 9;
+
+    private float speed = 6;
+
     private void Start()
     {
         switch (position)
         {
             case "bot":
-                Destroy(gameObject, 5);
+                Destroy(gameObject, destroyTime);
                 break;
             case "top":
                 transform.Rotate(0, 0, -180);
-                Destroy(gameObject, 5);
+                Destroy(gameObject, destroyTime);
                 break;
         }
     }
@@ -26,10 +30,10 @@ public class MoveObstacle : MonoBehaviour
         switch (position)
         {
             case "bot":
-                transform.Translate(-1 * 6 * Time.deltaTime, 0, 0);
+                transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
                 break;
             case "top":
-                transform.Translate(1 * 6 * Time.deltaTime, 0, 0);
+                transform.Translate(1 * speed * Time.deltaTime, 0, 0);
                 break;
         }
     }

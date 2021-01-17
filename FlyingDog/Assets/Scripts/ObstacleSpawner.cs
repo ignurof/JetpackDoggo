@@ -26,8 +26,6 @@ public class ObstacleSpawner : MonoBehaviour
         // Check the random result and spawn obstacle
         if (waitingSpawn)
             StartCoroutine(RandomSpawnerGenerator());
-        else
-            Debug.Log("Waiting on SpawnTimer");
     }
 
     // Spawn Timer
