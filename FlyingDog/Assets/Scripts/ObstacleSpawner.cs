@@ -9,6 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject prefab;
     private Vector3 bottomPos;
     private Vector3 topPos;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,21 @@ public class ObstacleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch (RandomSpawnerGenerator())
+        {
+            case 1:
+                Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
+                break;
+            case 2:
+                Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
+                break;
+        }
+    }
+
+    int RandomSpawnerGenerator()
+    {
+        int result;
+        result = Random.Range(1, 3);
+        return result;
     }
 }
