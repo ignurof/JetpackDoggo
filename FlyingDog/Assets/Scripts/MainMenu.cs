@@ -43,6 +43,11 @@ public class MainMenu : MonoBehaviour
                 {
                     SceneManager.LoadScene(1);
                 }
+                else if(result.gameObject.name == "Button")
+                {
+                    // Works only on build mode
+                    Application.Quit();
+                }
             }
         }
     }
