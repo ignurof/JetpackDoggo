@@ -20,11 +20,13 @@ public class PauseMenu : MonoBehaviour
             {
                 isPlaying = false;
                 Debug.Log("Pause menu");
+                Time.timeScale = 0;
             }
             else
             {
                 isPlaying = true;
                 Debug.Log("Unpause");
+                Time.timeScale = 1;
             } 
         }
     }
