@@ -8,7 +8,7 @@ public class MoveObstacle : MonoBehaviour
 
     private int destroyTime = 9;
 
-    private float speed = 6;
+    private float speed = 10;
 
     private void Start()
     {

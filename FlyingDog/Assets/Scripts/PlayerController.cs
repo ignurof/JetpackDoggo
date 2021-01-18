@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //public float speed;
-    private float updownSpeed = 4;
+    private float updownSpeed = 10;
     private float verticalInput;
 
     // Update is called once per frame

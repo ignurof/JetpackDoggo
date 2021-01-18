@@ -46,7 +46,7 @@ public class ObstacleSpawner : MonoBehaviour
                 topObj.GetComponent<MoveObstacle>().position = "top";
                 break;
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         waitingSpawn = true;
     }
 }
