@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Limit movement to game view
+        if (transform.position.y >= 7.5f)
+            transform.position = new Vector3(-15.63f, 7.5f, 0);
+        else if (transform.position.y <= -7.5f)
+            transform.position = new Vector3(-15.63f, -7.5f, 0);
+
         verticalInput = Input.GetAxis("Fire1");
         // Move the player to the right
         //transform.Translate(1 * speed * Time.deltaTime, 0, 0);
