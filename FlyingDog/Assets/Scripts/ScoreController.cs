@@ -11,17 +11,23 @@ public class ScoreController : MonoBehaviour
 
     Score score = new Score();
 
+    private bool firstSpawn;
     private bool waitingSpawn;
 
     void Start()
     {
         waitingSpawn = true;
+        firstSpawn = true;
     }
 
     void Update()
     {
+        // Wait until we reach first obstacle
+        if (firstSpawn)
+            StartCoroutine(FirstSpawn());
+
         // Check the random result and spawn obstacle
-        if (waitingSpawn)
+        if (waitingSpawn && !firstSpawn)
             StartCoroutine(ScoreTimer());
 
         gameObject.GetComponent<Text>().text = "Score: " + score.GetScore();
@@ -34,5 +40,11 @@ public class ScoreController : MonoBehaviour
         Debug.Log(score.GetScore());
         yield return new WaitForSeconds(1);
         waitingSpawn = true;
+    }
+
+    IEnumerator FirstSpawn()
+    {
+        yield return new WaitForSeconds(3.5f);
+        firstSpawn = false;
     }
 }

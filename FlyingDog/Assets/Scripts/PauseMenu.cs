@@ -6,14 +6,14 @@ using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool isPlaying;
+    public bool isPlaying;
 
     private GameObject pausePanel;
     private GameObject pauseBtn;
 
     private void Start()
     {
-        isPlaying = true;
+        isPlaying = false;
         pausePanel = GameObject.Find("Pause");
         pausePanel.SetActive(false);
         pauseBtn = GameObject.Find("Button");
@@ -23,30 +23,16 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (isPlaying)
         {
-            if (isPlaying)
-            {
-                isPlaying = false;
-                Debug.Log("Pause menu");
-                Time.timeScale = 0;
-                // Pause audio
-                AudioListener.pause = true;
+            Debug.Log("Pause menu");
+            Time.timeScale = 0;
+            // Pause audio
+            AudioListener.pause = true;
 
-                pausePanel.SetActive(true);
-                pauseBtn.SetActive(true);
-                
-            }
-            else
-            {
-                isPlaying = true;
-                Debug.Log("Unpause");
-                Time.timeScale = 1;
-                AudioListener.pause = false;
+            pausePanel.SetActive(true);
+            pauseBtn.SetActive(true);
 
-                pausePanel.SetActive(false);
-                pauseBtn.SetActive(false);
-            } 
         }
     }
 

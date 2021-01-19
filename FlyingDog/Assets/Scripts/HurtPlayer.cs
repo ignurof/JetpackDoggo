@@ -6,7 +6,7 @@ public class HurtPlayer : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Testing Collision");
         Destroy(collision.gameObject);
+        GameObject.Find("Canvas").GetComponent<PauseMenu>().isPlaying = true;
     }
 }
