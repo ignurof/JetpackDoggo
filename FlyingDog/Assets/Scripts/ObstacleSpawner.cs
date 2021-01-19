@@ -38,12 +38,10 @@ public class ObstacleSpawner : MonoBehaviour
         switch (result)
         {
             case 1:
-                var bottomObj = Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
-                bottomObj.GetComponent<MoveObstacle>().position = "bot";
+                Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
                 break;
             case 2:
-                var topObj = Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
-                topObj.GetComponent<MoveObstacle>().position = "top";
+                Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
                 break;
         }
         yield return new WaitForSeconds(1);

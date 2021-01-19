@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MoveObstacle : MonoBehaviour
 {
-    public string position;
-
     private int destroyTime = 9;
 
     private float speed = 10;
@@ -18,14 +16,6 @@ public class MoveObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (position)
-        {
-            case "bot":
-                transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
-                break;
-            case "top":
-                transform.Translate(1 * speed * Time.deltaTime, 0, 0);
-                break;
-        }
+        transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
     }
 }
