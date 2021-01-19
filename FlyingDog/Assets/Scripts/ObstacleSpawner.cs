@@ -11,6 +11,10 @@ public class ObstacleSpawner : MonoBehaviour
     private Vector3 topPos;
 
     private bool waitingSpawn;
+
+    // Limit spawn amounts per position
+    private int botAmount;
+    private int topAmount;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +22,8 @@ public class ObstacleSpawner : MonoBehaviour
         bottomPos = bottomSpawner.gameObject.transform.position;
         topPos = topSpawner.gameObject.transform.position;
         waitingSpawn = true;
+        botAmount = 0;
+        topAmount = 0;
     }
 
     // Update is called once per frame
@@ -38,10 +44,30 @@ public class ObstacleSpawner : MonoBehaviour
         switch (result)
         {
             case 1:
-                Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
+                if(botAmount >= 1 && botAmount < 3)
+                {
+                    Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
+                    topAmount++;
+                    botAmount--;
+                }
+                else
+                {
+                    Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
+                    botAmount++;
+                }
                 break;
             case 2:
-                Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
+                if(topAmount >= 1 && topAmount < 3)
+                {
+                    Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
+                    botAmount++;
+                    topAmount--;
+                }
+                else
+                {
+                    Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
+                    topAmount++;
+                }
                 break;
         }
         yield return new WaitForSeconds(1);
