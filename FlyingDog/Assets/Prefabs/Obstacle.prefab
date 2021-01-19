@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5560036837437611302}
   - component: {fileID: 8606757141081142652}
   - component: {fileID: 2158693456388380223}
-  - component: {fileID: 1977418223145054405}
+  - component: {fileID: 7895539189963187255}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9dc3aa0dfe6064faa7ba3418639f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1977418223145054405
-BoxCollider2D:
+--- !u!60 &7895539189963187255
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0536201, y: 4.155567}
+  m_Offset: {x: 0.27, y: 3.77}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -82,9 +82,30 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8579221, y: 8.238731}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.3601108, y: 1.4795771}
+      - {x: 1.9183393, y: 2.5866923}
+      - {x: 0.66513824, y: 2.1705136}
+      - {x: 0.022125244, y: 1.3650723}
+      - {x: -0.3646727, y: 2.6498656}
+      - {x: -1.0184827, y: 2.8897214}
+      - {x: -1.4099202, y: 2.6147037}
+      - {x: -1.4122825, y: 2.0568156}
+      - {x: -1.0710964, y: 1.620234}
+      - {x: -0.95982647, y: 1.256947}
+      - {x: -1.983892, y: 2.046156}
+      - {x: -2.3426547, y: 2.0576272}
+      - {x: -2.6155758, y: 1.767838}
+      - {x: -0.99535847, y: 0.9475999}
+      - {x: -1.087841, y: -0.038954496}
+      - {x: -1.0697799, y: -1.352499}
+      - {x: -0.992074, y: -1.4003217}
+      - {x: -0.84817314, y: -1.3427062}
+      - {x: -0.8090409, y: -0.6541383}
+      - {x: 1.3446627, y: -2.310653}
+      - {x: 1.970921, y: -1.7311065}
+      - {x: 0.64129806, y: 1.0170364}
 --- !u!1 &6696456669904834841
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 6696456669904834841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00999999, y: 4.16, z: 0}
-  m_LocalScale: {x: 14.827198, y: 62.08889, z: 14.827198}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children: []
   m_Father: {fileID: 5560036837437611302}
   m_RootOrder: 0
@@ -155,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f2c08ba3c09508f498eac22de15acc9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

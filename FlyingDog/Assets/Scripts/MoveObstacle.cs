@@ -12,16 +12,7 @@ public class MoveObstacle : MonoBehaviour
 
     private void Start()
     {
-        switch (position)
-        {
-            case "bot":
-                Destroy(gameObject, destroyTime);
-                break;
-            case "top":
-                transform.Rotate(0, 0, -180);
-                Destroy(gameObject, destroyTime);
-                break;
-        }
+        Destroy(gameObject, destroyTime);
     }
 
     // Update is called once per frame
