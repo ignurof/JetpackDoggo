@@ -37,7 +37,6 @@ public class ScoreController : MonoBehaviour
     {
         waitingSpawn = false;
         score.AddScore(1);
-        Debug.Log(score.GetScore());
         yield return new WaitForSeconds(1);
         waitingSpawn = true;
     }

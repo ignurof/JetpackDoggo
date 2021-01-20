@@ -44,11 +44,11 @@ public class ObstacleSpawner : MonoBehaviour
         switch (result)
         {
             case 1:
-                if(botAmount >= 1 && botAmount < 3)
+                if(botAmount >= 1)
                 {
                     Instantiate(prefab, topPos, Quaternion.Euler(0, 0, 0));
                     topAmount++;
-                    botAmount--;
+                    botAmount = 0;
                 }
                 else
                 {
@@ -57,11 +57,11 @@ public class ObstacleSpawner : MonoBehaviour
                 }
                 break;
             case 2:
-                if(topAmount >= 1 && topAmount < 3)
+                if(topAmount >= 1)
                 {
                     Instantiate(prefab, bottomPos, Quaternion.Euler(0, 0, 0));
                     botAmount++;
-                    topAmount--;
+                    topAmount = 0;
                 }
                 else
                 {

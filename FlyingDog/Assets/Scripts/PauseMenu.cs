@@ -10,6 +10,10 @@ public class PauseMenu : MonoBehaviour
 
     private GameObject pausePanel;
     private GameObject pauseBtn;
+    private GameObject ripImage;
+    private GameObject score;
+    private GameObject angelOne;
+    private GameObject angelTwo;
 
     private void Start()
     {
@@ -18,6 +22,13 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(false);
         pauseBtn = GameObject.Find("Button");
         pauseBtn.SetActive(false);
+        ripImage = GameObject.Find("Image");
+        ripImage.SetActive(false);
+        score = GameObject.Find("Score");
+        angelOne = GameObject.Find("AngelOne");
+        angelOne.SetActive(false);
+        angelTwo = GameObject.Find("AngelTwo");
+        angelTwo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,14 +36,17 @@ public class PauseMenu : MonoBehaviour
     {
         if (isPlaying)
         {
-            Debug.Log("Pause menu");
             Time.timeScale = 0;
             // Pause audio
             AudioListener.pause = true;
 
             pausePanel.SetActive(true);
             pauseBtn.SetActive(true);
+            ripImage.SetActive(true);
+            angelOne.SetActive(true);
+            angelTwo.SetActive(true);
 
+            score.transform.localPosition = new Vector3(0, -42f, 0);
         }
     }
 
