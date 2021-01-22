@@ -33,6 +33,9 @@ public class PauseMenu : MonoBehaviour
         angelOne.SetActive(false);
         angelTwo = GameObject.Find("AngelTwo");
         angelTwo.SetActive(false);
+        Time.timeScale = 1;
+        // Resume audio
+        AudioListener.pause = false;
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReplayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.UnloadSceneAsync(1);
+        SceneManager.LoadSceneAsync(1);
     }
 }
