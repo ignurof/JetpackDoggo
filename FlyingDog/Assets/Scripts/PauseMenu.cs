@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public bool isPlaying;
 
     private GameObject pausePanel;
-    private GameObject pauseBtn;
+    private GameObject quitBtn;
+    private GameObject replayBtn;
     private GameObject ripImage;
     private GameObject score;
     private GameObject angelOne;
@@ -20,8 +22,10 @@ public class PauseMenu : MonoBehaviour
         isPlaying = false;
         pausePanel = GameObject.Find("Pause");
         pausePanel.SetActive(false);
-        pauseBtn = GameObject.Find("Button");
-        pauseBtn.SetActive(false);
+        replayBtn = GameObject.Find("ReplayBtn");
+        replayBtn.SetActive(false);
+        quitBtn = GameObject.Find("QuitBtn");
+        quitBtn.SetActive(false);
         ripImage = GameObject.Find("Image");
         ripImage.SetActive(false);
         score = GameObject.Find("Score");
@@ -41,7 +45,8 @@ public class PauseMenu : MonoBehaviour
             AudioListener.pause = true;
 
             pausePanel.SetActive(true);
-            pauseBtn.SetActive(true);
+            replayBtn.SetActive(true);
+            quitBtn.SetActive(true);
             ripImage.SetActive(true);
             angelOne.SetActive(true);
             angelTwo.SetActive(true);
@@ -62,5 +67,10 @@ public class PauseMenu : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
