@@ -1,2 +1,2 @@
 # JetpackDoggo
-Clone of Flappybird
+Game about a dog and a jetpack
